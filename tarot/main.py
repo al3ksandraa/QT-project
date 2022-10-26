@@ -15,9 +15,11 @@ class MeaningsWindow(QMainWindow):
         self.cur = self.db.cursor()
 
         self.senior.currentIndexChanged.connect(lambda: self.set_data(self.senior.currentIndex() - 1, 'senior_arcana'))
+        self.wands.currentIndexChanged.connect(lambda: self.set_data(self.wands.currentIndex(), 'wands'))
 
     def set_data(self, key, table):
-        if key != -1:
+        if key != -1 and table == 'senior_arcana' or \
+           key != 0 and table != 'senior_arcana':
             name = self.cur.execute(f"""SELECT name FROM {table}
                 WHERE key = {key}""").fetchone()
             description = self.cur.execute(f"""SELECT description FROM {table}
