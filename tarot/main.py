@@ -92,7 +92,7 @@ class NotesWindow(QMainWindow):
         self.text.setPlainText(*notes)
 
 
-class MyWidget(QMainWindow):
+class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('ui/main.ui', self)
@@ -110,6 +110,6 @@ class MyWidget(QMainWindow):
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    ex = MyWidget()
+    ex = MainWindow()
     ex.show()
     sys.exit(app.exec_())
