@@ -2,7 +2,7 @@ import sys
 import sqlite3
 from PyQt5 import uic
 from PyQt5.QtGui import QPixmap, QIcon
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QWidget
 
 
 class MeaningsWindow(QMainWindow):
@@ -43,7 +43,7 @@ class MeaningsWindow(QMainWindow):
             self.direct.setHtml(*direct)
             self.inverted.setHtml(*inverted)
 
-            self.window_notes.set_data(key, table)
+            self.window_notes.set_notes(key, table)
 
             if table != 'senior_arcana':
                 self.senior.setCurrentIndex(0)
@@ -82,14 +82,14 @@ class NotesWindow(QMainWindow):
             self.cur.execute('UPDATE ' + self.table + ' SET notes = "' + text + '" WHERE key = ' + str(self.key))
             self.db.commit()
 
-    def set_data(self, key, table):
+    def set_notes(self, key, table):
         self.key = key
         self.table = table
 
         notes = self.cur.execute(f"""SELECT notes FROM {table}
             WHERE key = {key}""").fetchone()
 
-        self.text.setPlainText(*notes)
+        self.text.setPlainText(str(*notes))
 
 
 class MainWindow(QMainWindow):
