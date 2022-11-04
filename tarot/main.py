@@ -2,7 +2,7 @@ import sys
 import sqlite3
 from PyQt5 import uic
 from PyQt5.QtGui import QPixmap, QIcon
-from PyQt5.QtWidgets import QApplication, QMainWindow
+from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
 import random
 
 
@@ -92,6 +92,15 @@ class NotesWindow(QMainWindow):
 
         self.text.setPlainText(str(*notes))
 
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self, '', 'Закрыть окно заметок?', QMessageBox.Yes |
+                                     QMessageBox.No, QMessageBox.No)
+
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
 
 class DayCardWindow(QMainWindow):
     def __init__(self):
@@ -131,6 +140,48 @@ class DayCardWindow(QMainWindow):
         ex.window_meanings.show()
 
 
+class LayoutsWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('ui/layouts.ui', self)
+        self.setWindowTitle('Расклады')
+        self.setWindowIcon(QIcon('pictures/icons/tarot.ico'))
+
+        self.db = sqlite3.connect("db/meanings.db")
+        self.cur = self.db.cursor()
+
+        images = [self.image1, self.image2, self.image3, self.image4, self.image5, self.image6,
+                  self.image7, self.image8, self.image9]
+        texts = [self.text1, self.text2, self.text3, self.text4, self.text5, self.text6,
+                 self.text7, self.text8, self.text9]
+
+        for i in range(1, 10):
+            images[i - 1].setPixmap(QPixmap(f'pictures/layouts/{i}.png'))
+
+            data = self.cur.execute(f"""SELECT data FROM layouts
+                WHERE key = {i}""").fetchone()
+            texts[i - 1].setPlainText(*data)
+
+
+class InfoWindow(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        uic.loadUi('ui/info.ui', self)
+        self.setWindowTitle('О Таро')
+        self.setWindowIcon(QIcon('pictures/icons/tarot.ico'))
+
+        self.db = sqlite3.connect("db/meanings.db")
+        self.cur = self.db.cursor()
+
+        texts = [self.data1, self.data2, self.data3, self.data4,
+                 self.data5, self.data6, self.data7]
+
+        for i in range(1, 8):
+            data = self.cur.execute(f"""SELECT data FROM info
+                WHERE key = {i}""").fetchone()
+            texts[i - 1].setHtml(*data)
+
+
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -140,10 +191,14 @@ class MainWindow(QMainWindow):
 
         self.window_meanings = MeaningsWindow()
         self.window_day_card = DayCardWindow()
+        self.window_layouts = LayoutsWindow()
+        self.window_info = InfoWindow()
 
         self.image.setPixmap(QPixmap(f'pictures/main_window.png'))
         self.btn_meaning.clicked.connect(lambda: self.show_window(self.window_meanings))
         self.btn_day_card.clicked.connect(lambda: self.show_window(self.window_day_card))
+        self.btn_layouts.clicked.connect(lambda: self.show_window(self.window_layouts))
+        self.btn_info.clicked.connect(lambda: self.show_window(self.window_info))
 
     def show_window(self, window):
         window.show()
