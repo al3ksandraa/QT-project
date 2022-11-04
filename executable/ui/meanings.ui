@@ -1,0 +1,695 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>739</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="name">
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>20</y>
+      <width>371</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Название карты</string>
+    </property>
+   </widget>
+   <widget class="QPlainTextEdit" name="description">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>220</x>
+      <y>50</y>
+      <width>371</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="readOnly">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="image">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>181</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <property name="lineWidth">
+     <number>2</number>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QWidget" name="verticalLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>20</y>
+      <width>171</width>
+      <height>301</height>
+     </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Старшие арканы</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="senior">
+       <property name="currentText">
+        <string/>
+       </property>
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан 0. Шут</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан I. Маг</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан II. Верховная Жрица</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан III. Императрица</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан IV. Император</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан V. Иерофант</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан VI. Влюбленные</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан VII. Колесница</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан VIII. Сила</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан IX. Отшельник</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан X. Колесо Фортуны</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XI. Справедливость</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XII. Повешенный</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XIII. Смерть</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XIV. Умеренность</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XV. Дьявол</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XVI. Башня</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XVII. Звезда</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XVIII. Луна</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XIX. Солнце</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XX. Страшный Суд</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Аркан XXI. Мир</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_3">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Масть жезлов</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="wands">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Туз жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Двойка жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Тройка жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Четверка жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Пятерка жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Шестерка жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Семерка жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Восьмерка жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Девятка жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Десятка жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Паж жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Рыцарь жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Королева жезлов</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Король жезлов</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_4">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Масть кубков</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="cups">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Туз кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Двойка кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Тройка кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Четверка кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Пятерка кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Шестерка кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Семерка кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Восьмерка кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Девятка кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Десятка кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Паж кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Рыцарь кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Королева кубков</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Король кубков</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_5">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Масть мечей</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="swords">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Туз мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Двойка мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Тройка мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Четверка мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Пятерка мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Шестерка мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Семерка мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Восьмерка мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Девятка мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Десятка мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Паж мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Рыцарь мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Королева мечей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Король мечей</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="label_6">
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Масть пентаклей</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QComboBox" name="pentacles">
+       <item>
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Туз пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Двойка пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Тройка пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Четверка пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Пятерка пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Шестерка пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Семерка пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Восьмерка пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Девятка пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Десятка пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Паж пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Рыцарь пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Королева пентаклей</string>
+        </property>
+       </item>
+       <item>
+        <property name="text">
+         <string>Король пентаклей</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>340</y>
+      <width>151</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Значение</string>
+    </property>
+   </widget>
+   <widget class="QTabWidget" name="meaning">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>370</y>
+      <width>761</width>
+      <height>311</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>Прямое положение</string>
+     </attribute>
+     <widget class="QTextEdit" name="direct">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>761</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>Перевернутое положение</string>
+     </attribute>
+     <widget class="QTextEdit" name="inverted">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>761</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>9</pointsize>
+       </font>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="btn_notes">
+    <property name="geometry">
+     <rect>
+      <x>610</x>
+      <y>340</y>
+      <width>171</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Заметки</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
