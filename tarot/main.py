@@ -101,7 +101,7 @@ class NotesWindow(QMainWindow):  # заметки к карте
 
     def closeEvent(self, event):
         # диалоговое окно при закрытии заметок
-        reply = QMessageBox.question(self, '', 'Закрыть окно заметок?', QMessageBox.Yes |
+        reply = QMessageBox.question(self, ' ', 'Закрыть окно заметок?', QMessageBox.Yes |
                                      QMessageBox.No, QMessageBox.No)
 
         if reply == QMessageBox.Yes:  # если нажата кнопка "yes", закрытие окна
