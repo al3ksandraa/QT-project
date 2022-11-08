@@ -19,12 +19,16 @@ class MeaningsWindow(QMainWindow):  # значение карт
         self.window_notes = NotesWindow()  # окно заметок
         self.btn_notes.clicked.connect(lambda: self.show_window(self.window_notes))
 
-        # виджеты выюора карты
+        # виджеты выбора карты
         self.senior.currentIndexChanged.connect(lambda: self.set_data(self.senior.currentIndex() - 1, 'senior_arcana'))
         self.wands.currentIndexChanged.connect(lambda: self.set_data(self.wands.currentIndex(), 'wands'))
         self.cups.currentIndexChanged.connect(lambda: self.set_data(self.cups.currentIndex(), 'cups'))
         self.swords.currentIndexChanged.connect(lambda: self.set_data(self.swords.currentIndex(), 'swords'))
         self.pentacles.currentIndexChanged.connect(lambda: self.set_data(self.pentacles.currentIndex(), 'pentacles'))
+
+        # по умолчанию при открытии окна выводится информация об Аркане 0 (Шут)
+        self.set_data(0, 'senior_arcana')
+        self.senior.setCurrentIndex(1)
 
     def set_data(self, key, table):  # отображение информации о карте
         # если выбрана карта (в виджете ComboBox первый элемент пустой)
@@ -101,10 +105,19 @@ class NotesWindow(QMainWindow):  # заметки к карте
 
     def closeEvent(self, event):
         # диалоговое окно при закрытии заметок
-        reply = QMessageBox.question(self, ' ', 'Закрыть окно заметок?', QMessageBox.Yes |
-                                     QMessageBox.No, QMessageBox.No)
+        dialog = QMessageBox(self)
+        dialog.setWindowTitle(' ')
+        dialog.setText('Закрыть окно заметок?')
 
-        if reply == QMessageBox.Yes:  # если нажата кнопка "yes", закрытие окна
+        yes = dialog.addButton(QMessageBox.Yes)  # кнопка "Да"
+        cancel = dialog.addButton(QMessageBox.No)  # кнопка "Нет"
+        yes.setText("Да")
+        cancel.setText("Отмена")
+
+        dialog.setDefaultButton(cancel)
+        dialog.exec()
+
+        if dialog.clickedButton() == yes:  # если нажата кнопка "Да", закрытие окна
             event.accept()
         else:
             event.ignore()
